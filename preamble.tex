@@ -1,12 +1,36 @@
+% Pacotes essenciais
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{natbib}
 \usepackage{hyperref}
 \usepackage{amsmath, amssymb}
-\usepackage{abntex2cite} % ABNT citations
+\usepackage{abntex2cite}
 
-% Configurations for ABNT-style cover, fonts, and margins
-\title{Título da Monografia}
-\author{Seu Nome}
-\date{\today}
+% Carrega estilo de universidade específico para PUCRS
+\usepackage{abntex2-university}
+
+% Configurações do documento
+\titulo{MODELAGEM DE PERSONAS NA ASSESSORIA FINANCEIRA: APLICAÇÃO DE TÉCNICAS DE MACHINE LEARNING PARA IDENTIFICAÇÃO DE PERFIS DE ALTA PERFORMANCE}
+\autor{JULIO CRISTÓVÃO BALENA}
+\orientador{Prof. EDUARDO SHIRMER FINN}
+\local{Porto Alegre}
+\data{\the\year}
+
+% Configuração da instituição
+\instituicao{Pontifícia Universidade Católica do Rio Grande do Sul}
+\tipotrabalho{Monografia}
+\preambulo{Projeto de Monografia apresentada como requisito parcial à aprovação na disciplina de Trabalho de Conclusão I de Ciências Econômicas da Escola de Negócios da Pontifícia Universidade Católica do Rio Grande do Sul.}
+
+% Configurações para hyperref
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+    citecolor=blue,
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={Monografia de Conclusão de Curso},
+    pdfkeywords={Assessoria financeira, Machine learning, Alta performance}
+}

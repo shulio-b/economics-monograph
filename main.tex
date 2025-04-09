@@ -1,13 +1,47 @@
-\documentclass[12pt,openright,oneside,a4paper,chapter=TITLE,english,brazil]{abntex2}
-\include{preambulo} % Includes preamble configurations
+\documentclass[12pt, openright, oneside, a4paper, chapter=TITLE, english, brazil]{abntex2}
+
+% Inclui o preâmbulo com pacotes e configurações
+\include{preambulo}
 
 \begin{document}
-    \include{sections/01-introduction}
-    \include{sections/02-literature-review}
-    \include{sections/03-methodology}
-    \include{sections/04-data-analysis}
-    \include{sections/05-conclusion}
-    
-    % References
-    \bibliography{refences}
+
+% Elementos pré-textuais
+\imprimircapa
+\imprimirfolhaderosto
+
+% Resumo em português
+\begin{resumo}
+O mercado de assessoria financeira no Brasil apresenta uma expansão
+significativa, com um crescimento de 7\% no número de profissionais
+certificados em 2024, alcançando 26.681 assessores, frente aos 24.931
+registrados em 2023, conforme dados da ANCORD. Este trabalho busca descrever 
+o processo de construção de um modelo para identificar perfis de alta 
+performance em assessoria financeira, utilizando técnicas de machine learning, 
+como LASSO e Regressão Quantílica. O objetivo é criar taxonomias que facilitem 
+o pareamento otimizado entre cliente e assessor no processo de atendimento, 
+assim como aprimorar estratégias para maximizar a captação de recursos.
+
+\vspace{\onelineskip}
+\noindent
+\textbf{Palavras-chave}: Assessoria financeira. Machine learning. LASSO. Regressão Quantílica. Perfis de alta performance.
+\end{resumo}
+
+% Sumário
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents
+\cleardoublepage
+
+% Elementos textuais
+\textual
+
+\include{sections/01-introduction}
+\include{sections/02-literature-review}
+\include{sections/03-methodology}
+\include{sections/04-data-analysis}
+\include{sections/05-conclusion}
+
+% Elementos pós-textuais
+\postextual
+\bibliography{references}
+
 \end{document}

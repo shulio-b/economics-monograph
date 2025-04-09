@@ -1,0 +1,63 @@
+\chapter{INTRODUÇÃO}
+
+O mercado de assessoria financeira no Brasil apresenta uma expansão
+significativa, com um crescimento de 7\% no número de profissionais
+certificados em 2024, alcançando 26.681 assessores, frente aos 24.931
+registrados em 2023, conforme dados da ANCORD (Associação Nacional das
+Corretoras e Distribuidoras de Títulos e Valores Mobiliários, Câmbio e
+Mercadorias). Esse aumento evidencia a demanda crescente por serviços
+financeiros personalizados e destaca a necessidade de compreender os
+fatores que impulsionam o sucesso dos assessores. Segundo \cite{foerster2017}, a variação no desempenho desses profissionais está mais
+associada às suas próprias características --- como habilidades,
+experiência e estratégias de atendimento --- do que às dos clientes, o
+que abre espaço para o uso de técnicas de machine learning, como LASSO e
+Regressão Quantílica, na identificação de perfis de alta performance.
+Essa abordagem pode otimizar o atendimento e aumentar a captação de
+recursos, aproveitando o potencial de dados internos e de mercado.
+
+\section{Objetivo Geral}
+
+Descrever o processo de construção de um modelo para identificar perfis
+de alta performance em assessoria financeira. Este processo será baseado
+em técnicas de machine learning, utilizando dados de CRM, informações da
+corretora e métricas internas de operações, com o propósito de aprimorar
+estratégias de atendimento e maximizar a captação de recursos.
+
+\section{Objetivos Específicos}
+
+\begin{enumerate}
+  \item Determinar os principais fatores que contribuem para o desempenho
+  superior na captação de recursos, aplicando técnicas de seleção de
+  variáveis, como LASSO, e análises estatísticas a dados históricos
+  de CRM, informações institucionais de corretora (ativos de
+  clientes e receitas geradas) e métricas operacionais internas
+  (características demográficas dos assessores e metas definidas).
+
+  \item Classificar os perfis de assessores e clientes de alta performance
+  por meio do algoritmo de clustering em Regressão Quantílica,
+  criando taxonomias que facilitem o pareamento otimizado entre
+  cliente e assessor no processo de atendimento.
+\end{enumerate}
+
+% Adicione informações sobre as fontes de dados que você tem disponíveis
+\section{Fontes de Dados}
+
+Para realização desta pesquisa, serão utilizados dados do período de 2022/1 a 2026/2, com granularidade diária para todas as variáveis, provenientes das seguintes fontes:
+
+\subsection{CRM Salesforce Cloud}
+\begin{itemize}
+  \item \textbf{Ligações}: origem, destino e conteúdo
+  \item \textbf{Reuniões}: origem, destino, conteúdo e demais dados relevantes disponíveis
+\end{itemize}
+
+\subsection{Corretora/Banking XP}
+\begin{itemize}
+  \item \textbf{Ativos}: custódia e detalhes do ativo
+  \item \textbf{Movimentação de Recursos}: entre instituições e detalhes da movimentação (tipo, volume, descrição)
+  \item \textbf{Receitas}: todas as informações descritas com granularidade diária, segmentadas por cliente
+\end{itemize}
+
+\subsection{Operacionais}
+\begin{itemize}
+  \item \textbf{Informações Demográficas dos Usuários}: gênero, idade e início do trabalho na função
+\end{itemize}

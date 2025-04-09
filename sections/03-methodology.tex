@@ -1,0 +1,39 @@
+\chapter{METODOLOGIA}
+
+Este capítulo apresenta a metodologia adotada para identificar perfis de alta performance na assessoria financeira, detalhando as técnicas de machine learning utilizadas, o processo de coleta e tratamento dos dados, e os métodos de análise.
+
+\section{Coleta e Preparação dos Dados}
+
+Os dados utilizados nesta pesquisa serão provenientes de três fontes principais: CRM Salesforce Cloud, Corretora/Banking XP e dados operacionais internos. O período de análise compreende de 2022/1 a 2026/2, com granularidade diária para todas as variáveis.
+
+\section{Técnicas de Machine Learning}
+
+\subsection{LASSO (Least Absolute Shrinkage and Selection Operator)}
+
+O LASSO será utilizado para a seleção de variáveis relevantes, permitindo identificar quais fatores são mais determinantes para o desempenho na captação de recursos. Esta técnica é particularmente útil quando se trabalha com um grande número de variáveis potencialmente correlacionadas, pois realiza automaticamente a seleção de variáveis e a regularização, ajudando a prevenir o sobreajuste do modelo.
+
+A formulação matemática do LASSO é dada por:
+
+\begin{equation}
+\hat{\beta}^{lasso} = \arg\min_{\beta} \left\{ \sum_{i=1}^{N} (y_i - \beta_0 - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \sum_{j=1}^{p} |\beta_j| \right\}
+\end{equation}
+
+onde $\lambda$ é o parâmetro de regularização que controla a força da penalidade.
+
+\subsection{Regressão Quantílica para Clustering}
+
+A Regressão Quantílica será empregada para identificar padrões e criar agrupamentos (clusters) de assessores e clientes com base em seus perfis e desempenho. Esta técnica permite a análise de diferentes quantis da distribuição de desempenho, fornecendo uma visão mais completa dos fatores que influenciam o sucesso em diferentes níveis de performance.
+
+A função objetivo da Regressão Quantílica para o quantil $\tau$ é dada por:
+
+\begin{equation}
+\min_{\beta} \sum_{i:y_i \geq x_i'\beta} \tau |y_i - x_i'\beta| + \sum_{i:y_i < x_i'\beta} (1-\tau) |y_i - x_i'\beta|
+\end{equation}
+
+\section{Validação dos Modelos}
+
+Para garantir a robustez dos resultados, serão utilizadas técnicas de validação cruzada, como k-fold cross-validation. Além disso, serão aplicados testes estatísticos para verificar a significância dos fatores identificados e a estabilidade dos agrupamentos encontrados.
+
+\section{Métricas de Avaliação}
+
+O desempenho dos assessores será avaliado principalmente através de métricas relacionadas à captação de recursos, considerando tanto o volume absoluto quanto o crescimento relativo. Outras métricas secundárias incluirão a retenção de clientes, a diversificação da carteira e a satisfação do cliente, quando disponíveis.
